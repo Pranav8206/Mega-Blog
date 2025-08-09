@@ -4,7 +4,7 @@ import appwriteService from '../appwrite/config'
 import { useNavigate, useParams } from 'react-router-dom'
 
 const EditPost = () => {
-    const [posts, setPosts] = useState([])
+    const [posts, setPosts] = useState(null)
     const {slug} = useParams()
     const navigate = useNavigate()
 

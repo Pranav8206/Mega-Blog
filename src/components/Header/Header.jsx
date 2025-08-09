@@ -7,7 +7,7 @@ import { logout } from '../../store/authSlice'
 
 
 function Header() {
-    const authStatus = useSelector((state) => state.status)
+    const authStatus = useSelector((state) => state.auth.status)
     const navigate = useNavigate()
 
     const navItems = [
@@ -27,7 +27,7 @@ function Header() {
         name: "All Posts",
         slug: "/all-posts",
         active: authStatus
-      },,{
+      },{
         name: "Add Post",
         slug: "/add-post",
         active: authStatus

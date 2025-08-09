@@ -16,6 +16,7 @@ const RTE = ({ name, control, label, defaultValue = "" }) => {
         control={control}
         render={({ field: { onChange } }) => (
           <Editor
+            apiKey='9y16esckh2oiy86molx6fu4rjv8hzv3u3ubv5r1cesqv3bop'
             initialValue={defaultValue}
             init={{
               initialValue: defaultValue,
@@ -50,10 +51,8 @@ const RTE = ({ name, control, label, defaultValue = "" }) => {
                 "advtable",
                 "advcode",
                 "advtemplate",
-                "ai",
                 "uploadcare",
                 "mentions",
-                "tinycomments",
                 "tableofcontents",
                 "footnotes",
                 "mergetags",

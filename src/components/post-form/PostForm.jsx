@@ -7,7 +7,7 @@ import { useSelector } from "react-redux";
 
 const PostForm = ({ post }) => {
   const navigate = useNavigate();
-  const userData = useSelector((state) => state.user.userData);
+  const userData = useSelector((state) => state.auth.userData);
 
   const { register, handleSubmit, watch, setValue, control, getValues } =
     useForm({
@@ -22,7 +22,7 @@ const PostForm = ({ post }) => {
   const submit = async (data) => {
     if (post) {
       const file = data.image[0]
-        ? appwriteService.uploadFile(data.image[0])
+        ? await appwriteService.uploadFile(data.image[0])
         : null;
 
       if (file) {
@@ -42,10 +42,13 @@ const PostForm = ({ post }) => {
         if (file) {
             const fileId = file.$id
             data.featuredImage = fileId
-            await appwriteService.createPost({
+            const dbPost = await appwriteService.createPost({
                 ...data,
                 userId : userData.$id
             })
+            if (dbPost) {
+                    navigate(`/post/${dbPost.$id}`);
+            }
         }
     }
   };
@@ -116,7 +119,7 @@ const PostForm = ({ post }) => {
                     className="mb-4"
                     {...register("status", { required: true })}
                 />
-                <Button type="submit" bgColor={post ? "bg-green-500" : undefined} className="w-full">
+                <Button type="submit" bgColor={post ? "bg-green-500" : undefined} className="w-full cursor-pointer">
                     {post ? "Update" : "Submit"}
                 </Button>
             </div>

@@ -5,14 +5,16 @@ import { PostCard, Container } from "../components";
 const AllPosts = () => {
   const [posts, setPosts] = useState([]);
 
-  useEffect(() => {}, []);
-
-  appwriteService.getPosts()
+  useEffect(() => {
+    appwriteService.getPosts()
     .then((posts) => {
         if (posts) {
             setPosts(posts.documents)
         }
     })
+  }, []);
+
+  
 
   return (
     <div className="py-8 w-full">
