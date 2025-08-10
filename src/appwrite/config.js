@@ -9,7 +9,7 @@ export class Service {
   constructor() {
     this.client
       .setEndpoint(conf.appwriteUrl) // Your API Endpoint
-      .setProject(conf.appwriteProjectId); // Your project ID
+      .setProject(conf.appwriteProjectId) ;
 
     this.databases = new Databases(this.client);
     this.bucket = new Storage(this.client);
@@ -76,54 +76,51 @@ export class Service {
     }
   }
 
-  async getPosts(queries = [Query.equal("status", "active")]) {
+  async getPosts(queries = [Query.equal("status", "Active (Everyone can see.)")]) {
     try {
       return await this.databases.listDocuments(
         conf.appwriteDatabaseId, // databaseId
         conf.appwriteCollectionId, // collectionId
-        queries,
+        queries
       );
     } catch (error) {
       console.log("Appwrite service :: getPostss :: error", error);
-      return false
+      return false;
     }
   }
-
 
   //file upload service
 
-  async uploadFile (file) {
+  async uploadFile(file) {
     try {
-        await this.bucket.createFile(
-            conf.appwriteBucketId,
-            ID.unique(),
-            file
-        )
-        return true
-    } catch (error) {
-        console.log("Appwrite service :: uploadFile :: error", error);
-        return false
-    }
-  }
-
-  async deleteFile (fileId) {
-    try {
-        await this.bucket.deleteFile(
-            conf.appwriteBucketId,
-            fileId,
-        )
-        return true
-    } catch (error) {
-        console.log("Appwrite service :: deleteFile :: error",error);
-        return false
-    }
-  }
-
-  getFilePreview (fileId) {
-    return this.bucket.getFilePreview(
+      return await this.bucket.createFile(
         conf.appwriteBucketId,
-        fileId
-    )
+        ID.unique(),
+        file
+      );
+    } catch (error) {
+      console.log("Appwrite service :: uploadFile :: error", error);
+      return false;
+    }
+  }
+
+  async deleteFile(fileId) {
+    try {
+      await this.bucket.deleteFile(conf.appwriteBucketId, fileId);
+      return true;
+    } catch (error) {
+      console.log("Appwrite service :: deleteFile :: error", error);
+      return false;
+    }
+  }
+
+  getFileView(fileId) {
+    try {
+      return this.bucket.getFileView(conf.appwriteBucketId, fileId);
+    } catch (error) {
+      console.log("Appwrite service :: getFileView :: error", error);
+      return false;
+    }
   }
 }
 

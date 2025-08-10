@@ -5,7 +5,6 @@ import { Controller } from "react-hook-form";
 
 const RTE = ({ name, control, label, defaultValue = "" }) => {
 
-  const onchange = () => {}
 
   return (
     <div>
@@ -37,8 +36,6 @@ const RTE = ({ name, control, label, defaultValue = "" }) => {
                 "table",
                 "visualblocks",
                 "wordcount",
-                // Your account includes a free trial of TinyMCE premium features
-                // Try the most popular premium features until Aug 23, 2025:
                 "checklist",
                 "mediaembed",
                 "casechange",
@@ -67,7 +64,7 @@ const RTE = ({ name, control, label, defaultValue = "" }) => {
               toolbar:
                 "undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link media table mergetags | addcomment showcomments | spellcheckdialog a11ycheck typography uploadcare | align lineheight | checklist numlist bullist indent outdent | emoticons charmap | removeformat",
             }}
-            onEditorChange={onchange}
+            onEditorChange={ onChange }
           />
         )}
       />

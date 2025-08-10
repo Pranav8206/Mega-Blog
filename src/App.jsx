@@ -27,10 +27,10 @@ function App() {
   
   
   return (
-    <div className='min-h-screen flex flex-wrap content-between bg-gray-400'>
+    <div className='min-h-screen flex flex-wrap content-between bg-gray-300'>
       <div className='w-full block'>
         <Header />
-        <main>
+        <main className='min-h-[60vh]'>
          <Outlet />
         </main>
         <Footer />
