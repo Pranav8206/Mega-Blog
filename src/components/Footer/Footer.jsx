@@ -14,7 +14,7 @@ function Footer() {
               <Logo width="100px" className="text-gray-800" />
             </div>
             <p className="text-sm text-gray-600">
-              &copy; {new Date().getFullYear()} DevUI. All Rights Reserved.
+              &copy; {new Date().getFullYear()} . All Rights Reserved.
             </p>
             <div className="flex space-x-4">
               {/* Social Media Icons */}

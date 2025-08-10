@@ -22,7 +22,7 @@ function Header() {
                 <nav className="flex items-center justify-between py-3">
                     {/* Logo */}
                     <Link to="/" className="flex items-center pr-1 ">
-                        <Logo width="100px" />
+                        <Logo width="120px" />
                     </Link>
 
                     <ul className="flex items-center space-x-1 sm:space-x-3">
