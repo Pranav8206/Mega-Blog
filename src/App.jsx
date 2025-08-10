@@ -1,10 +1,9 @@
-import React,{ useEffect, useState } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
+import React, { useEffect } from 'react'
+import { useDispatch } from 'react-redux'
 import authService from './appwrite/auth'
 import { login, logout , finishLoading} from './store/authSlice'
 import { Footer, Header } from './components'
 import { Outlet } from 'react-router-dom'
-import Loader from './components/Loader'
 
 function App() {
   // const [loading, setLoading] = useState(true)

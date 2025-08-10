@@ -18,7 +18,7 @@ const PostForm = ({ post = "" }) => {
     width: window.innerWidth,
     height: window.innerHeight,
   });
-  const editorRef = useRef(null);
+  
 
   const {
     register,
@@ -28,7 +28,7 @@ const PostForm = ({ post = "" }) => {
     control,
     getValues,
     formState: { errors },
-    trigger,
+    
   } = useForm({
     defaultValues: {
       title: post?.title || "",
@@ -167,10 +167,6 @@ const PostForm = ({ post = "" }) => {
     return () => subscription.unsubscribe();
   }, [watch, slugTransform, setValue, checkSlugAvailability]);
 
-  const handleEditorChange = (content, editor) => {
-    setValue("content", content);
-    setContentLength(editor.getContent({ format: "text" }).length);
-  };
 
   return (
     <>

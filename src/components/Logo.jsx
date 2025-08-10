@@ -9,8 +9,7 @@ function Logo({width = '100px'}) {
       width={width}
       role="img"
       aria-labelledby="logoTitle logoDesc"
-      
-    >
+      >
 
       <rect x="8" y="22" width="10" height="10" rx="2" fill="#3B82F6" opacity="0.95" />
       <rect x="8" y="35" width="10" height="10" rx="2" fill="#93C5FD" opacity="0.85" />

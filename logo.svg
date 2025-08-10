@@ -1,0 +1,12 @@
+<svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 32 32"
+      width="30" height="30"
+      role="img"
+      
+    >
+
+      <rect x="10" y="3" width="10" height="10"  fill="#3B82F6" opacity="0.95" />
+      <rect x="10" y="17" width="10" height="10" fill="#93C5FD" opacity="0.85" />
+
+    </svg>

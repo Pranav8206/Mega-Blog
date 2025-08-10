@@ -13,7 +13,7 @@ const Button = ({
       className={`px-4 py-2 cursor-pointer rounded-lg ${bgColor} ${textColor} ${className}`}
       {...props}
       type={`${type}`}
-      typeof=""
+      
     >
       {children}
     </button>
