@@ -9,7 +9,6 @@ function Header() {
     const navigate = useNavigate();
 
     const navItems = [
-        { name: "Home", slug: "/", active: true },
         { name: "Login", slug: "/login", active: !authStatus },
         { name: "Signup", slug: "/signup", active: !authStatus },
         { name: "All Posts", slug: "/all-posts", active: authStatus },
@@ -20,7 +19,7 @@ function Header() {
         <header className="sticky top-0 z-50 bg-gradient-to-r from-gray-100 via-gray-200 to-gray-100 shadow-lg border-b border-gray-300">
             <Container>
                 <nav className="flex items-center justify-between py-3">
-                    {/* Logo */}
+                    
                     <Link to="/" className="flex items-center pr-1 ">
                         <Logo width="120px" />
                     </Link>
@@ -46,7 +45,6 @@ function Header() {
                             )
                         )}
 
-                        {/* Logout Button */}
                         {authStatus && (
                             <li className="ml-1 sm:ml-4">
                                 <LogoutBtn className="bg-gray-300 text-gray-800 hover:bg-red-500 hover:text-white px-3 py-2 rounded-lg transition-colors duration-200 cursor-pointer" />

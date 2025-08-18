@@ -273,7 +273,9 @@ const PostForm = ({ post = "" }) => {
                   </div>
                 )}
               </div>
-
+              <label className="block text-sm font-medium text-gray-700 mb-1">
+                  Status
+                </label>
               <Selects
                 options={["Active (Everyone can see.)", "Inactive (Only you can see.)"]}
                 label="Status"

@@ -22,7 +22,6 @@ const PostCard = ({ $id, title, featuredImage }) => {
   return (
     <Link to={`/post/${$id}`} className="block h-full group">
       <div className="w-full h-full bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:shadow-lg flex flex-col">
-        {/* Image container with aspect ratio */}
         <div className="relative pt-[56.25%] bg-gray-100 overflow-hidden">
           {imageError || !imageUrl ? (
             <div className="absolute inset-0 flex items-center justify-center bg-gray-200">
@@ -47,13 +46,12 @@ const PostCard = ({ $id, title, featuredImage }) => {
           )}
         </div>
         
-        {/* Content area */}
         <div className="p-4 flex-1 flex flex-col">
           <h2 className="text-lg font-semibold text-gray-800 mb-2 line-clamp-2">
             {title}
           </h2>
           <div className="mt-auto pt-2 border-t border-gray-100">
-            <span className="text-sm text-blue-600 font-medium">View Post →</span>
+            <span className="text-xs text-blue-600 font-medium uppercase tracking-wider">View Post →</span>
           </div>
         </div>
       </div>

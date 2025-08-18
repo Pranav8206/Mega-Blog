@@ -12,6 +12,7 @@ import Login from "./Login";
 import PostForm from "./post-form/PostForm";
 import AuthLayout from './AuthLayout';
 import Selects from "./Select";
+import PostSlider from "./PostCardSlider";
 
 
 
@@ -30,4 +31,5 @@ export {
     PostForm,
     AuthLayout,
     Selects,
+    PostSlider
 }

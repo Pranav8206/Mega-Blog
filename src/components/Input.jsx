@@ -7,7 +7,7 @@ const Input = forwardRef(
     return (
       <div className="w-full">
         {label && (
-          <label className="inline-block mb-1 pl-1" htmlFor={Id}>
+          <label className="block text-sm font-medium text-gray-700 mb-1" htmlFor={Id}>
             {label}
           </label>
         )}
