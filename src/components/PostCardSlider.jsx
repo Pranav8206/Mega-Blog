@@ -63,9 +63,9 @@ const PostCardSlider = ({ $id, title, featuredImage, content }) => {
             )}
           </div>
 
-          <div className="flex-1 p-4  sm:py-6 sm:px-5 flex flex-col justify-between md:w-1/2">
+          <div className="flex-1 p-4  sm:py-6 sm:px-5 flex flex-col justify-evenly md:w-1/2">
             <div>
-              <h3 className="sm:text-2xl text-xl font-bold text-white sm:mb-4 leading-tight group-hover:text-blue-100 transition-colors duration-300">
+              <h3 className="sm:text-2xl text-xl font-bold text-white mb-4 leading-tight group-hover:text-blue-100 transition-colors duration-300">
                 {title}
               </h3>
               {content && (
@@ -317,7 +317,7 @@ const PostSlider = ({ posts = [] }) => {
                 }`}
                 style={{ width: `${100 / slides.length}%` }}
               >
-                <div className="h-[500px] max-w-3xl mx-auto">
+                <div className="h-[400px] md:h-[500px] max-w-3xl mx-auto">
                   <PostCardSlider {...post} />
                 </div>
               </div>
